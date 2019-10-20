@@ -1,0 +1,113 @@
+%接線に関する参考資料
+\documentclass{jsarticle} \usepackage{graphics} \usepackage{amsmath} \usepackage{amssymb} \usepackage{cases}
+\newcommand{\pt}{$(x_1,y_1)$}
+\newcommand{\ptt}{$(p,q)$}
+
+\begin{document}
+    \section{楕円・双曲線}
+    \subsection{導出}
+    楕円と双曲線に関してはまとめて話を進める。確かに楕円は
+    \[
+    \frac{x^2}{a^2} +\frac{y^2}{b^2}=1
+    \]
+    対して双曲線は
+    \[
+    \frac{x^2}{a^2} -\frac{y^2}{b^2}=\pm 1
+    \]
+    となり厳密には異なるが、この2つの曲線の方程式は0ではない実数$k,l$によって
+    \begin{equation}
+        kx^2 +ly^2 =1
+        \label{eq:3-1}
+    \end{equation}
+    となる。式(\ref{eq:3-1})で表される二次曲線上の点\pt としてその点での接線を求めるがまず$y_1 \neq 0$の時を考える\footnote{円の時と同様に傾きが定義できない場合を分けて考える。}。
+    式(\ref{eq:3-1})の両辺を$x$で微分し
+    \begin{eqnarray*}
+        2kx +2ly \cdot \frac{{\rm d}y}{{\rm d}x} &=& 0\\
+        \frac{{\rm d}y}{{\rm d}x} &=& -\frac{kx}{ly}
+    \end{eqnarray*}
+    したがって\pt における接線の傾きは$-\frac{kx_1}{ly_1}$となる。よって接線の方程式は
+    \begin{equation}
+        y-y_1=-\frac{kx_1}{ly_1} (x-x_1)
+        \label{eq:3-2}
+    \end{equation}
+    となる。ここからさらに式変形を加える。
+    \begin{eqnarray*}
+        y-y_1 &=& -\frac{kx_1}{ly_1} (x-x_1)\\
+        \Leftrightarrow ly_1 y -ly_1^2 &=& kx_1^2 -kx_1 x\\
+        \Leftrightarrow kx_1 x +ly_1 y &=& kx_1^2 +ly_1^2\\
+        &=& 1
+    \end{eqnarray*}
+    以上の式変形から接線の方程式が
+    \begin{equation}
+        kx_1 x +ly_1 y=1
+        \label{eq:3-3}
+    \end{equation}
+    であることが分かった。また、接線の傾きが定義できない$y_1=0$の時の接線は$(x_1,0)$を通り$y$軸と平行な直線なのだから
+    \[
+    x=x_1
+    \]
+    である。この$x_1$は$kx_1^2=1$をみたすため、
+    \[
+    x_1=\frac{1}{kx_1}
+    \]
+    となる。この式を直前の式に代入することで
+    \[
+    kx_1 x=1
+    \]
+    が得られ、これはすなわち式(\ref{eq:3-3})で与えられる式の1つである。
+
+    式(\ref{eq:3-3})から放物線の時に与えた置き換えの規則が成立していることが分かった。
+
+    \subsection{二次曲線の中心}
+    円、楕円、双曲線には{\bf 二次曲線の中心}と呼ばれるものがある。円においてはその中心、楕円、双曲線においては焦点の中点が二次曲線の中心になる。この二次曲線の中心に対する意識、理解が二次曲線の平行移動に関する問題を容易にする。
+
+    さてこの節で扱った楕円、双曲線は二次曲線の中心が原点にあるものだった。次にこの中心を\ptt へ移したものを考える。式は円の時と同じで分かりやすい。\\
+    楕円は
+    \[
+    \frac{(x-p)^2}{a^2} +\frac{(y-q)^2}{b^2}=1
+    \]
+    双曲線は
+    \[
+    \frac{(x-p)^2}{a^2} -\frac{(y-q)^2}{b^2}=\pm 1
+    \]
+    である。簡単のため
+    \[
+    k(x-p)^2+l(y-q)^2=1
+    \]
+    とする。この二次曲線上の点\pt における接線は式%(\ref{eq:2-3})
+    の導出と全く同じ方法で
+    \begin{equation}
+        k(x_1-p)(x-p)+l(y_1-q)(y-q)=1
+        \label{eq:3-4}
+    \end{equation}
+    となる。
+
+    \subsection{確認}
+    接線の方程式が分かったところで置き換えの規則が成立するかを確認する。
+    \begin{eqnarray*}
+        k(x-p)^2+l(y-q)^2&=&1\\
+        \Leftrightarrow kx^2 -2kpx +ly^2 -2lqy +kp^2+lq^2 &=& 1
+    \end{eqnarray*}
+    であることと、
+    \begin{eqnarray*}
+        k(x_1-p)(x-p)+l(y_1-q)(y-q) &=& 1\\
+        \Leftrightarrow kx_1 x -2kp \cdot \frac{x +x_1}{2} +ly_1 y -2lq \cdot \frac{y+y_1}{2} +kp^2 +lq^2 &=& 1
+    \end{eqnarray*}
+    これで規則の成立を示せた。
+
+    \subsection{確認}
+    計算ばかりでは本当にあっているのかがわからない。具体例で確認する。
+    \begin{description}
+        \item[楕円] $\frac{x^2}{9}+\frac{y^2}{4}=1$の$(\frac{3}{2},\sqrt{3})$における接線\\
+        式(\ref{eq:3-3})より接線の方程式は
+        \[
+        \frac{1}{6}x+\frac{\sqrt{3}}{4}y=1
+        \]
+        図参照
+        \item[双曲線] 
+    \end{description}
+
+
+
+
+\end{document}

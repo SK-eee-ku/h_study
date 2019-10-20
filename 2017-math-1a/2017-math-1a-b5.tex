@@ -1,0 +1,385 @@
+%2017年センター試験本試験数学1Aの解説資料
+\documentclass[b5paper]{jsarticle}
+\usepackage{graphics}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{cases}
+
+\renewcommand\thefootnote{*\arabic{footnote}}
+\topmargin -0.8in
+\textheight 8.5in
+
+\title{2017年センター試験本試験数学1Aの解説}
+\author{フリーステップ香里園駅前校　数学チーム}
+
+\begin{document}
+  \maketitle
+  問題文は各自用意すること
+  \section{第１問}
+  \subsection{問題要旨}
+  [1]は式の展開公式や因数分解の公式の理解を問う問題。$v+\frac{u}{v}$の形の式が与えられたとき、
+  \[
+  (a+b)^2=a^2+2ab+b^2
+  \]
+  \[
+  a^3+b^3=(a+b)(a^2-ab+b^2)
+  \]
+  で現れる$ab$が定数になることがこの問いの答え直結する。また、上式の２つ目がまだ覚えられていない場合は早急に復習をすべきである。
+
+  [2]は集合の包含関係の理解を問う問題。ベン図を使うまでもないが、ベン図と包含関係の対応はこれを機に復習すべきである。
+
+  [3]は平方完成の計算と、変数が変わったときにその変数がとる値に注意を向けられているのかを問う問題。問題の流れとしては変数$a$を含む放物線の式に対し平方完成を行い、その後頂点の動きのみに注目して計算をすすめるというものである。
+
+  \subsection{解答例}
+
+  \begin{description}
+    \item[ [~1] ]\\
+    ア,イ\\
+    \begin{eqnarray*}
+      \left( x+\frac{2}{x} \right) ^2  &=& x^2+\frac{4}{x^2} +4 \\
+      &=& 9+4 \\
+      &=& 13\\
+      \therefore x+\frac{2}{x} &=& \sqrt{13}
+    \end{eqnarray*}
+    ウ,エ,オ,カ\\
+    $a^3+b^3=(a+b)(a^2-ab+b^2)$より、
+    \begin{eqnarray*}
+      x^3 + \frac{8}{x^3}  &=& \left( x+ \frac{2}{x} \right) \left( x^2 + \frac{4}{x^2} -2 \right)  \\
+      &=& \left( x+ \frac{2}{x} \right) \times (9-2) \\
+      &=& 7 \sqrt{13}
+    \end{eqnarray*}
+    キ,ク\\
+    \begin{eqnarray*}
+      x^4+\frac{16}{x^4} &=& \left(x^2+\frac{4}{x^2}  \right)^2 -8\\
+      &=& 9^2-8 \\
+      &=& 73
+    \end{eqnarray*}
+
+    \item[ [~2] ]\\
+    条件を具体的な値に変換するなどして{\bf 集合}として表現する（基本的に小文字の条件を大文字の集合として表す）。まずは現状を把握したい。
+
+    $p$、$q$、$r$に対応する集合をそれぞれ$P$、$Q$、$R$とする。すると３つの集合は以下のようになる。
+    \[
+    P= \{ 1    \}
+    \]
+    \[
+    Q=\{ -1 , 1\}
+    \]
+    \[
+    R=\{ x | x>0 \}
+    \]
+    すなわち以下の関係が成立する。
+    \begin{eqnarray*}
+      P & \Rightarrow & Q \\
+      P & \Rightarrow & R
+    \end{eqnarray*}
+    では、問題に移ろう。
+
+
+    問題文中に新しく出てきた集合を整理すると、
+    \begin{eqnarray*}
+      \bar{P} &=& \{x|x\neq 1\} \\
+      P \cup \bar{Q} &=& \{x|x \neq -1\} \\
+      \bar{P} \cap Q &=&  \{ -1\} \\
+      P \cap Q &=& \{1\}
+    \end{eqnarray*}
+    であるので新たに以下の関係も成立する。
+    \begin{eqnarray*}
+      P & \Leftrightarrow & P \cap Q\\
+      P \cap Q &\Rightarrow & R \hspace{2em} (\because P  \Leftrightarrow  P \cap Q) \\
+      \bar{P} \cap Q &\Rightarrow & Q \\
+    \end{eqnarray*}
+
+    答えを出す\footnote{(十分条件)$\Rightarrow$(必要条件)を使う}。\\
+    ケ：必要条件\\
+    コ：必要条件でも十分条件でもない\\
+    サ：必要条件でも十分条件でもない\\
+    シ：十分条件\\
+    ス：Aは真、Bは偽、Cは真\footnote{$P  \Rightarrow Q$の対偶}\\
+
+    \item[ [~3] ]\\
+    セ-ト\\
+    \begin{eqnarray*}
+      g(x) &=& x^2 -2(3a^2 + 5a)x+18a^4 30a^3 +49a^2 +16\\
+      &=& \{x-(3a^2+5a)\}^2 +9a^4 +24a^2 +16
+    \end{eqnarray*}
+    よって$y=g(x)$の頂点の座標は$(3a^2+5a,9a^4 +24a^2 +16)$\\
+    ナ-ネ\\
+    頂点の$x$は$a$の関数であるため$x(a)$と表せる。
+    \begin{eqnarray*}
+      x(a) &=& 3a^2+5a\\
+      &=& 3(a+ \frac{5}{6})^2 - \frac{25}{12}
+    \end{eqnarray*}
+    よって最小値$-\frac{25}{12}$ ($a= - \frac{5}{6}$)\\
+    ノ-ハ\\
+    頂点の$y$は問題文より$t$の関数であることがわかる。またここで注意すべきは$t=a^2$であるため、$a$が実数全体を動くと$t \geq 0$であるということである。
+    \begin{eqnarray*}
+      y(t) &=& 9t^2 +24t +16\\
+      &=& (3t+4)^2
+    \end{eqnarray*}
+    よって最小値16 ($t=0$)
+  \end{description}
+
+  \subsection{解説}
+  [1]の問題は交代式\footnote{文字を入れ替えても同じになる式　ex)$a+b=b+a$}に関する問題でも使うことのできる計算方法なのでぜひ覚えていただきたい。\\
+  例)$a+b=5$、$ab=6$の時の$(a+b)^2$の値を求めよ。
+
+  [2]の問題はもちろん毎回命題を立てて真か偽かを考えてくれて構わないが、どうしても時間がかかってしまう。そのため解答例に挙げたように集合の包含関係を用いた解法も視野に入れてほしい。脚注にも書いたように\\
+  (十分条件)$\Rightarrow$(必要条件)\\
+  である。ぜひとも
+  "矢の先は{\bf 必要}\footnote{先のない矢は刺さらないみたいな、、、}"と覚えてほしい。
+
+  [3]の問題は終わってみれば平方完成と$t \geq 0$に気づくだけというものだった。計算間違いだけは無いようにしよう。
+
+  \section{第２問}
+  \subsection{問題要旨}
+  [1]は正しく余弦定理と正弦定理を使い分けられるかを問う問題。この２つの定理は極めて重要なため、少しでも不安を感じたら復習することをすすめる。
+
+  [2]はデータの分析の問題。基本的な問題でかつ公式の利用で十分なためこれ以上の言及は控える。疑問点は担当講師に尋ねること。
+
+  \subsection{解答例}
+  [1]のみ扱い、図は示さない。適宜自ら作図すること。
+  \begin{description}
+    \item[[~1]]\\
+    ア\\
+    $\bigtriangleup $ABCに余弦定理を適応して、
+    \begin{eqnarray*}
+      {\rm AC}^2 &=& {\rm AB}^2 + {\rm BC}^2 -2{\rm AB}\cdot {\rm BC} \cos 60^\circ \\
+      &=& (\sqrt{3} -1)^2 +(\sqrt{3} +1)^2 -2 (\sqrt{3} -1)(\sqrt{3} +1)\times \frac{1}{2}\\
+      &=& 6
+    \end{eqnarray*}
+    {\centering ${\rm AC}>0$なので\\}
+    \[
+    {\rm AC} = \sqrt{6}
+    \]
+  \end{description}
+  イ\\
+  $\bigtriangleup $ABCに正弦定理を適応して、
+  \begin{eqnarray*}
+    2R &=& \frac{\sqrt{6}}{\sin 60^\circ}\\
+    &=& \frac{\sqrt{6}}{\frac{\sqrt{3}}{2}}\\
+    &=& 2\sqrt{2}\\
+    \therefore R &=& \sqrt{2}
+  \end{eqnarray*}
+  ウ-オ\\
+  $\bigtriangleup $ABCに正弦定理を適応して、
+  \begin{eqnarray*}
+    2R &=& \frac{{\rm BC}}{\sin {\rm A}}\\
+    \Leftrightarrow \sin {\rm A} &=& \frac{{\rm BC}}{2R}\\
+    &=& \frac{\sqrt{3} + 1}{2 \sqrt{2}}\\
+    &=& \frac{\sqrt{6} + \sqrt{2}}{4}
+  \end{eqnarray*}
+  カ-ケ\\
+  三角形の面積が$\sin$を使って表せることを思い出す。\\
+  すなわち$\bigtriangleup {\rm ABD}= \frac{1}{2} {\rm AB}\cdot {\rm AD} \sin {\rm A}$である。これより、
+  \begin{eqnarray*}
+    \frac{1}{2} {\rm AB}\cdot {\rm AD} \sin {\rm A} &=& \frac{\sqrt{2}}{6}\\
+    \Leftrightarrow {\rm AB}\cdot {\rm AD} &=& \frac{\sqrt{2}}{3} \cdot \frac{1}{\sin{\rm A}}\\
+    &=& \frac{\sqrt{2}}{3} \cdot \frac{4}{\sqrt{6} + \sqrt{2}}\\
+    &=& \frac{2\sqrt{3} -2}{3}\\ \\
+    \therefore {\rm AD} &=& \frac{2\sqrt{3} -2}{3} \cdot \frac{1}{{\rm AB}}\\
+    &=& \frac{2(\sqrt{3} -1)}{3} \cdot \frac{1}{2(\sqrt{3} -1)}\\
+    &=& \frac{2}{3}
+  \end{eqnarray*}
+
+  \subsection{解説}
+  [1]の難度は基礎問題レベル、計算自体も簡単なので余裕をもって満点を取りたい。三角形の面積に関しては$\sin$を使うもののほかにベクトルを使うものなどもあり一度総復習をしてみるのもよい。
+
+  \section{第３問}
+  \subsection{問題要旨}
+  くじ引きに関する確率の問題。お約束のように条件付き確率が出ている。くじの数、人物の数が少ないためすべての結果を書き上げて解くのが現実的で実践的であろう。
+  \subsection{解答例}
+  全事象の書き上げは芸がないので計算によって答えを求める。\\
+  ア、イ\\
+  "少なくとも～"とあったらすぐさま余事象を考えよう。この場合はA、Bがどちらも外れを引くことを考えよう。すなわち事象$\bar{E_1}$である。その確率$P(\bar{E_1})$は、
+  \begin{eqnarray*}
+    P(\bar{E_1}) &=& \frac{2}{4} \cdot \frac{1}{3} \cdot \frac{2}{2} \\
+    &=& \frac{1}{6}\\
+    \therefore P(E_1) &=& 1- P(\bar{E_1})\\
+    &=& \frac{5}{6}
+  \end{eqnarray*}
+  ウ-オ\\
+  ３人で２つの当たりを取り合うのだから、だれか{\bf １人だけ}はずれを引くことになる。ここまで分かればA、B、Cの１人だけはずれを引く事象の和事象が答え。 1,3,5\\
+  カ、キ\\
+  諸君はいちいちAがはずれ、Bがはずれ、Cがはずれの時を計算し足し合わせてくれただろう。しかし問題の状況をよく考えてほしい。３人がくじを引き終わると必ず、１人当たり２人はずれ、または２人当たり１人はずれの２つの場合のみであり、なおかつこの２つの結果はどちらも同じ確率\footnote{当たりくじとはずれくじが同数であるため}で起きる。したがって
+  \[
+  P(E)= \frac{1}{2}
+  \]
+  ク-ケ\\
+  事象Aが起きた時に事象Bが起きる条件付き確率$P_{\rm A}({\rm B})$は
+  \[
+  P_{\rm A}({\rm B}) =\frac{P({\rm A} \cap {\rm B})}{P({\rm A})}
+  \]
+  これを使って求める。またこの問題の条件では
+  \begin{eqnarray*}
+    E & \Rightarrow & E_1\\
+    ゆえに E \cap E_1 & \Leftrightarrow & E\\
+    \therefore P(E \cap E_1) &=& P(E)\\
+    &=& \frac{1}{2}
+  \end{eqnarray*}
+  である。よって
+  \begin{eqnarray*}
+    P_{E_1}(E) &=& \frac{P(E \cap E_1)}{P(E)}\\
+    &=& \frac{3}{5}
+  \end{eqnarray*}
+  コ-シ\\
+  前の内容がかなりヒントになる。つまり１人だけ外れなら確実に他の２人は当たるし、さらにだれか１人がはずれなら他の２人のうち少なくとも一方は当たる。　0,3,5\\
+  ス-タ\\
+  問いの序盤でAとBの少なくとも一方が当たる確率を求めた。次はBとCの少なくとも一方が当たる確率、さらにCとAの少なくとも一方があたく確率である。条件は何が変わっているのか。何も変わっていない。この問題の条件においてA、B、Cのくじを引く順番が変わったところで確率に何の影響も与えない。すなわち以下の通りである。
+  \[
+  P(E_1)=P(E_2)=P(E_3)=\frac{5}{6}
+  \]
+  チ\\
+  これは$E_1$の時と同様に考える。
+  \begin{eqnarray*}
+    E & \Rightarrow & E_2\\
+    ゆえに E \cap E_2 & \Leftrightarrow & E\\
+    \therefore P(E \cap E_2) &=& P(E)\\
+    &=& \frac{1}{2}\\ \\
+    E & \Rightarrow & E_3\\
+    ゆえに E \cap E_3 & \Leftrightarrow & E\\
+    \therefore P(E \cap E_3) &=& P(E)\\
+    &=& \frac{1}{2}
+  \end{eqnarray*}
+  ここまでくれば結果はわかるだろう。
+  \[
+  P_{E_1}(E)=P_{E_2}(E)=P_{E_3}(E)
+  \]
+
+  \subsection{解説}
+  分かりやすく余事象の使用を促しているのでその誘導に乗ろう。この問題の肝となるのは\\
+  \begin{itemize}
+    \item 当たりくじとはずれくじが同数であること
+    \item A、B、Cが対等\footnote{入れ替えても確率が変わらないということ}であること
+  \end{itemize}
+  の大きく２点でありこのため計算を回避できている。コ-シはやや難しかったように思う。これは全事象を表にまとめると回避できる。最後にその表の一例を表~\ref{tab:3-all situation}で示しておく。
+  \begin{table}[htbp]
+    \begin{center}
+      \begin{tabular}{|c|c|c|c|c|c|c|}\hline
+        &1&2&3&4&5&6\\ \hline\hline
+        A&$\circ$&$\circ$&$\circ$&$\times$&$\times$&$\times$\\ \hline
+        B&$\circ$&$\times$&$\times$&$\circ$&$\circ$&$\times$\\ \hline
+        C&$\times$&$\circ$&$\times$&$\circ$&$\times$&$\circ$\\ \hline
+      \end{tabular}
+    \end{center}
+    \caption{第３問の全事象}
+    \label{tab:3-all situation}
+  \end{table}
+
+  \section{第４問}
+  \subsection{問題要旨}
+  倍数判定法の理解を問う問題。倍数判定法の条件から立式し連立方程式として解けばよい。連立方程式の解は複数になるので解それぞれが問いの答えになるのか確認しなければならない。最後の問いは直前のものとは雰囲気の違う問題。n進法問題はいつ出てもおかしくないので対策はしっかり取ろう。
+
+  \subsection{解答例}
+  ここの解答例において$6n$が$6 \times n$を意味していないことに注意されたし\\
+  ア、イ\\
+  ４の倍数の判定法は下２ケタが４の倍数であること。すなわち$7a$が４の倍数であることが条件。72,76が４の倍数である。\\
+  ウ-キ\\
+  ９の倍数の判定法はその数に出てくる数字の和が９の倍数であること。よって$7+b+5+c$が９の倍数でかつ$5c$は４の倍数である。
+  \begin{eqnarray*}
+    52,56が4の倍数より　c &=& 2,6\\
+    c=2の時　b &=& 4\\
+    c=6の時　b &=& 0,9\\
+  \end{eqnarray*}
+  よって、条件を満たす最小の$7b5c$は7056、最大は7956。\\
+  ク-サ\\
+  前問で可能性があるのはたった3つ。機械的に因数分解をしてしまおう。
+  \begin{eqnarray*}
+    7056 &=& 2^4 \times 3^2 \times 7^2\\
+    7452 &=& 2^2 \times 3^4 \times 23\\
+    7956 &=& 2^2 \times 3^2 \times 13 \times 17
+  \end{eqnarray*}
+  よって答えは
+  \[
+  7056=(6 \times 14)^2
+  \]
+  シ-タ\\
+  答えから言うと正の約数はすべてで24個。以下のとおりである。\\
+  1,2,3,4,6,9,11,12,18,22,27,33,36,44,54,66,99,108,132,198,297,396,594,1188\\
+  しかし、これを全て計算できるだろうか。現実的ではない。実際問題を解くとき約数全てがどうなっているかはわかる必要がない。素因数分解から約数の個数のみを算出しよう。
+  \[
+  1188=2^2 \times 3^3 \times 11
+  \]
+  ここから1188の正の約数の作ることを考えると、２を0，1，2個取り、３を0，1，2，3個取り、11を0，1個取るということになる。この選択肢の個数は$3\times 4\times 2=24$これは1188の正の約数の個数である。２の倍数で約数を探すなら選択肢の２を１つ省けばよい。つまり$2\times 4\times 2=16$。４の倍数なら２つ省く、すなわち$1\times 4\times 2=8$。\\
+  チ、ツ\\
+  例えば10進数においてある数の末尾にいくつ０が続くのかを考えるとき、何回10で割り切れりのかを数えるだろう。２進数でも変わらない。２で何回割ることができるのかを数えればよい。1188の正の約数全ての積が２で何回割れるかは
+  \[
+  (２の倍数の数)＋（4の倍数の数)=24
+  \]
+  で与えられる。
+  \subsection{解説}
+  倍数判定法さえ覚えていれば前半は簡単に解ける。一度は倍数判定法の総確認をしてもらいたい。後半の約数を扱う問題は、素因数分解のみから約数の個数やその性質がわかることが望ましい。すべて書き上げられることはまずないと考えてもらいたい。
+
+  \section{第５問}
+  \subsection{問題要旨}
+  平面幾何に関する様々な定理の運用を問う問題。この問題には方べきの定理、メネラウスの定理、余弦定理が少なくとも出ていて、さらに内心の理解も問われている。計算自体はさほど難しくないのでここでも高得点を狙いたい。
+  \subsection{解答例}
+  図は示さないので適宜自身で作図するように。\\
+  ア、イ\\
+  点Cを共有している線分CAと線分CB、そして$\bigtriangleup $ABDに対し方べきの定理を使うと
+  \begin{eqnarray*}
+    {\rm CB} \cdot {\rm CE} &=& {\rm CA} \cdot {\rm CD}\\
+    &=& 28
+  \end{eqnarray*}
+  ウ、エ\\
+  ${\rm CB}=8$を代入し。
+  \begin{eqnarray*}
+    8 {\rm CE} &=& 28\\
+    \therefore {\rm CE} &=& \frac{7}{2}
+  \end{eqnarray*}
+  オ-キ\\
+  $\bigtriangleup $FBEと線分ACに対してメネラウスの定理を適応させると、
+  \[
+  \frac{{\rm CE}}{{\rm EB}} \cdot \frac{{\rm BF}}{{\rm FA}} \cdot \frac{{\rm AD}}{{\rm DC}} =1
+  \]
+  である。すでに分かっている値を代入し計算すれば、
+  \[
+  \frac{{\rm BF}}{{\rm FA}}=\frac{12}{7}
+  \]
+  ク-コ\\
+  \[
+  {\rm BF}={\rm AF}+3
+  \]
+  を直前の問いの式に代入し、
+  \[
+  {\rm AF}=\frac{21}{5}
+  \]
+  サ-シ\\
+  $\bigtriangleup$ABCに余弦定理を適応して、
+  \begin{eqnarray*}
+    \cos {\rm B} &=& \frac{{\rm BA}^2 +{\rm BC}^2 -{\rm AC}^2}{2{\rm BA}\cdot {\rm BC}}\\
+    &=& \frac{3^2 +8^2 -7^4}{2 \cdot 3 \cdot 8}\\
+    &=& \frac{1}{2}
+  \end{eqnarray*}
+  また、$0^\circ < \angle {\rm B} < 180^\circ$より
+  \[
+  \angle {\rm B}=60^\circ
+  \]
+  ス-ソ\\
+  内接円の半径を求めるときは三角形の面積を使おう。具体的には内心から各角に線を引くと、
+  高さが内接円の半径、底辺が三角形の各辺になっている３つの三角形に分けられる。
+  ここから内接円の半径が求められそうだ。以下内接円の半径は$r$とする。\\
+  $\bigtriangleup$ABCの面積は
+  \begin{eqnarray*}
+    \bigtriangleup {\rm ABC} &=& \frac{1}{2} \cdot {\rm BA} \cdot {\rm BC} \sin {\rm B}\\
+    &=& 6 \sqrt{3}
+  \end{eqnarray*}
+  これを内接円の半径で表す。
+  \begin{eqnarray*}
+    \frac{r \times 3}{2} +\frac{r \times 7}{2} + \frac{r \times 8}{2} &=& \frac{r(3+7+8)}{2}\\
+    &=& 9r\\
+    \therefore 9r &=& 6 \sqrt{3}\\
+    \Leftrightarrow r &=& \frac{2 \sqrt{3}}{3}
+  \end{eqnarray*}
+  タ-ツ\\
+  内心をI、内心から辺BCへ下ろした垂線とBCの交点をHとすると、$\bigtriangleup$BIHは直角三角形であり、直線BIが$\angle$ABCの角の二等分線であることから、$\angle {\rm IBH}=30^\circ$である。このことから
+  \begin{eqnarray*}
+    {\rm BI} &=& \frac{{\rm IH}}{\sin 30^\circ}\\
+    &=& \frac{4 \sqrt{3}}{3} \hspace{2em} (\because {\rm IH}=r)
+  \end{eqnarray*}
+  \subsection{解説}
+  個々の設問自体それほど難しいわけではないが、こうも色々と混ぜてくると実際の試験でスラスラと回答できるかは怪しいものである。内接円の半径の出し方など鉄板ともいえる解法ばかりなので、センター試験の勉強を通して復習してもらいたい。
+
+
+
+\end{document}

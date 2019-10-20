@@ -1,0 +1,100 @@
+%2018年センター試験本試験数学1Aの解説資料
+%\documentclass{jsarticle} \usepackage[dvipdfmx]{graphics} \usepackage{amsmath} \usepackage{amssymb} \usepackage{cases}
+
+%\begin{document}
+    \section{第3問}
+    \subsection{問題について}
+    確率について和の法則、積の法則、条件付き確率の理解を問う問題。サイコロを2個扱った問題は表を描いてしまえばおしまいなので簡単な問題だといえる。
+
+    事象$X$が時の事象$Y$が起こる条件付き確率は
+    \begin{equation}
+        \label{eq:3-1}
+        P_X(Y)=\frac{P(X \cap Y)}{P(X)}
+    \end{equation}
+
+    でるという公式\footnote{確率の乗法定理と言ったりもする。}は必ず覚えよう。
+    \subsection{解答例}
+    以下サイコロの出目の表記に関して大きいサイコロを$L$、小さいサイコロを$S$とし、二つ合わせて$(L,S)$で表す。
+    \begin{description}
+        \item[ア-カ] 事象をそのまま集合として扱う。全体集合は$U$とする。
+        \begin{eqnarray*}
+            A &=& \{ (L,S) | L=4 \}\\
+            &=& \{ (4,1),(4,2),(4,3),(4,4),(4,5),(4,6) \}\\
+            \vspace{2mm}
+            B &=& \{(L,S)|L+S=7 \}\\
+            &=& \{ (1,6),(2,5),(3,4),(4,3),(5,2),(6,1) \}\\
+            \vspace{2mm}
+            C &=& \{(L,S) |L+S=9 \}\\
+            &=& \{(3,6),(4,5),(5,4),(6,3) \}
+        \end{eqnarray*}
+        あとは計算。
+        \begin{eqnarray*}
+            P(A) &=&\frac{n(A)}{n(U)}\\
+            &=& \frac{1}{6}\\
+            P(B) &=& \frac{1}{6}\\
+            P(C) &=& \frac{1}{9}
+        \end{eqnarray*}
+        \item[キ-コ] 条件付き確率がでできたので、公式を使うべく$A\cap C$を明らかにする。
+        \begin{eqnarray*}
+            A\cap C &=& \{(L,S)|L=4かつL+S=9 \}\\
+            &=& \{(4,5) \}\\
+            \therefore P(A\cap C) &=& \frac{1}{36}
+        \end{eqnarray*}
+        そうしたら式(\ref{eq:3-1})より事象Cが起こったときの事象Aが起こる条件付き確率$P_C(A)$は
+        \begin{eqnarray*}
+            P_C(A) &=& \frac{P(A\cap C)}{P(C)}\\
+            &=& \frac{1}{4}
+        \end{eqnarray*}
+        同様に$P_A(C)$は
+        \[
+        P_A(C) = \frac{1}{6}
+        \]
+        \item[サ,シ] まずは$A \cap B$の確認
+        \begin{eqnarray*}
+            A \cap B&=& \{(4,3) \}\\
+            \therefore P(A \cap B) &=& \frac{1}{36}
+        \end{eqnarray*}
+        したがって、
+        \[
+        P(A \cap B)=P(A)P(B) \hspace{3mm} \left( =\frac{1}{36} \right)
+        \]
+        さらに
+        \begin{eqnarray*}
+            P(A \cap C)=\frac{1}{36} \hspace{5mm} P(A)P(C)=\frac{1}{54}\\
+            \therefore P(A \cap C) > P(A)P(C)
+        \end{eqnarray*}
+        \item[ス-タ]
+        \begin{eqnarray*}
+            \bar{A} \cap C &=& \{ (3,6),(5,4),(6,3) \}\\
+            \therefore P(\bar{A} \cap C) &=& \frac{1}{12}
+        \end{eqnarray*}
+        求める確率は
+        \[
+        P(A \cap B)P(\bar{A} \cap C) =\frac{1}{432}
+        \]
+        \item[チ-テ] 一瞬悩んでしまうような問題ではあるが直前の設問がヒントになっている。1回目が$A \cap B$で2回目が$\bar{A} \cap C$ならば題意を満たしているからだ。この調子で題意を満たす場合を見つけ、それぞれ確率を計算し足し合わせればよいとわかる。この時、事象$B$と事象$C$が排反事象であることに注意すると以下の場合が題意を満たす。\\
+        \begin{table}[htbp]
+            \caption{3つの事象がちょうど1回ずつ起こる}
+            \label{tab:3-1}
+            \begin{center}
+                \begin{tabular}{|c|c|c|}\hline
+                    1回目&2回目&確率 \\ \hline
+                    $A \cap B$&$\bar{A} \cap C$&$\frac{1}{432}$ \\ \hline
+                    $\bar{A} \cap C$&$A \cap B$&$\frac{1}{432}$ \\ \hline
+                    $A \cap C$&$\bar{A} \cap B$&$\frac{5}{1296}$ \\ \hline
+                    $\bar{A} \cap B$&$A \cap C$&$\frac{5}{1296}$ \\ \hline
+                \end{tabular}
+            \end{center}
+        \end{table}
+        下2つの確率に関しては以下のように算出した。
+        \begin{eqnarray*}
+            P(\bar{A} \cap B) &=& \frac{5}{36}\\
+            P(\bar{A} \cap B) \times P(A \cap C) &=& \frac{5}{36} \times \frac{1}{36}
+        \end{eqnarray*}
+        求める確率は
+        \[
+        \frac{1}{432} \times 2 + \frac{5}{1296} \times 2 =\frac{1}{81}
+        \]
+    \end{description}
+
+%\end{document}

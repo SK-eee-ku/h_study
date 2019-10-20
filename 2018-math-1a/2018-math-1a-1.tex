@@ -1,0 +1,139 @@
+%2018年センター試験本試験数学1Aの解説資料
+%\documentclass{jsarticle} \usepackage[dvipdfmx]{graphics} \usepackage{amsmath} \usepackage{amssymb} \usepackage{cases}
+
+
+%\begin{document}
+    \section{第1問}
+    \subsection{問題について}
+    [1]は与えられた式の規則性を認識できるかを問う問題。最後に和と差の積\footnote{$(a+b)(a-b)=a^2+b^2$が和$\times$差になっていることからこのように言ったりもする}を使いさえすればいいので悩むことなく完答したい。
+
+    [2]はお決まりの集合を扱った問題。前半の(1)は集合の要素の個数が高々20個で済むので機械的に書き上げればよいだろう。後半の(2)では与えられた条件式の絶対値をすぐさま処理すれば数直線を活用し答えが出せる。
+
+    [3]は軸が移動する二次関数の最小値がどこで現れるかの理解を問う問題。定義域と軸の位置関係で最小や最大となる$x$の値は変わってゆく。このことは簡素な図を描き、イメージをしっかりとつかめば難しいことではない。
+
+    \subsection{解答例}
+    \begin{description}
+        \item[ア] \begin{eqnarray*}
+            (x+n)(n+5-x) &=& (x+n) \{ (5-x) +n \}\\
+            &=& x(5-x) + n^2 + 5n
+        \end{eqnarray*}
+        \item[イ-エ] 与えられた式
+        \[
+        A =x(x+1)(x+2)(5-x)(6-x)(7-x)
+        \]
+        に注目すると以下の式が見えてこないだろうか。
+        \begin{eqnarray*}
+            x(5-x) &=& X\\ \\
+            (x+1)(6-x) &=& (x+1)(1+5-x)\\
+            &=& x(5-x)+1^2 +5\times 1\\
+            &=& X +6\\ \\
+            (x+2)(7-x) &=& (x+2)(2+5-x)\\
+            &=& x(5-x)+2^2 +5\times 2\\
+            &=& X +14
+        \end{eqnarray*}
+        これは直前の問題を用いたもので、どうしても自力で気付かなければならない。ここまでくれば
+        \[
+        A=X(X+6)(X+14)
+        \]
+        \item[オ] \begin{eqnarray*}
+            x &=& \frac{5 + \sqrt{17}}{2} より\\
+            X &=& \frac{5 + \sqrt{17}}{2} \times \left( 5 - \frac{5 + \sqrt{17}}{2} \right) \\
+            &=& \frac{5 + \sqrt{17}}{2} \times \frac{5 - \sqrt{17}}{2}\\
+            &=& \frac{25-17}{4}\\
+            &=& 2
+        \end{eqnarray*}
+        \item[カ] \begin{eqnarray*}
+        X &=& 2 より\\
+        A &=& 2 \times (2+6) \times (2+14)\\
+        &=& 2 \times 2^3 \times 2^4\\
+        &=& 2^8
+        \end{eqnarray*}
+        \item[キ] 十分書き上げられそうな個数の時はそうしてしまうのも一手。
+        \begin{eqnarray*}
+            A &=& \{1,2,4,5,10,20 \}\\
+            B &=& \{3,6,9,12,15,18 \}\\
+            C &=& \{2,4,6,8,10,12,14,16,18,20 \}
+        \end{eqnarray*}
+        (a)$A \subset C$とはすなわち$A$の要素はどれをとっても$C$の要素だということ。しかし、$A$から1を取り出すと$1\notin C$なので偽である。\\
+        (b)$A\cap B =\phi$とはすなわち$A$と$B$には共通する要素がないということであるがこれは真である。\\
+        よって(a)偽(b)真の2\\
+        \item[ク] $\cap$が要素の共通のものを挙げ、$\cup$が要素を合わせるということがわかったらあとは間違えずにやるだけ。問いに現れる集合の要素を示すことで解説とする。
+        \begin{eqnarray*}
+            A\cup C &=& \{1,2,4,5,6,8,10,12,14,16,18,20 \}\\
+            (A\cup C)\cap B &=& \{6,12,18 \}\\
+            \overline{A} \cap C &=& \{6,8,12,14,16,18 \}\\
+            (\overline{A} \cap C)\cap B &=& \{3,6,8,9,12,14,15,16,18 \}\\
+            B\cup C &=& \{2,3,4,6,8,9,10,12,14,15,16,18,20 \}\\
+            \overline{A} \cap (B\cup C) &=& \{3,6,8,9,12,14,15,16,18 \}
+        \end{eqnarray*}
+        よって(c)と(d)はともに正しいので0\\
+        \item[ケ,コ] まずは絶対値の処理
+        \begin{eqnarray*}
+            |x-2|>2 & \Leftrightarrow & x<0,4<x\\
+            \sqrt{x^2}>4 &\Leftrightarrow & |x|>4\\
+            &\Leftrightarrow & x<-4,4<x
+        \end{eqnarray*}
+        ここで$\sqrt{ }$の計算に注意\footnote{$\sqrt{a^2}=|a|$である}しよう。ここから問題に出てくる条件の内容は
+        \begin{eqnarray*}
+            p &:& x<0,4<x\\
+            r &:& 4<x\\
+            s &:& x<-4,4<x\\
+            qまたはr &:& x<0,4<x
+        \end{eqnarray*}
+        よって
+        \begin{eqnarray*}
+            qまたはr &\Leftrightarrow & p\\
+            r &\Rightarrow & s
+        \end{eqnarray*}
+        ここからケが2、コが0とわかる\footnote{$(十分条件)\Rightarrow (必要条件)$「矢の先は必要」としたらいいかな…}。
+        \item[サ,シ]
+        \begin{eqnarray*}
+            f(x) &=& ax^2 -2(a+3)x-3a+21 \ \ (a>0)\\
+            &=& a \left( x-\frac{a+3}{a} \right)^2 -3a +21 -\frac{(a+3)^2}{a}\\
+            よって p&=& \frac{a+3}{a}\\
+            &=& 1+\frac{3}{a}
+        \end{eqnarray*}
+        \item[ス,セ] 直前の問いから$y=f(x)$のグラフの軸は$x=p$だとわかってるので軸の位置から最小の位置を考える。今回$x^2$の係数$a$は正のため$y=f(x)$のグラフの軸は下に凸である。なので$x=4$で最小になるには$p\ge 4$が条件(ス)であり、$x=p$で最小になるには$0 < p \le 4 $が条件(セ)である。以下はその概念図である。
+        \begin{figure}[htbp]
+            \begin{center}
+                \resizebox{!}{3cm}{
+                \includegraphics{1-1a.eps}
+                }
+            \end{center}
+            \caption{概念図}
+            \label{fig:1-1}
+        \end{figure}
+        ここまでくれば計算は簡単。
+        \begin{eqnarray*}
+            p\ge 4 \hspace{3mm}より\\
+            (0<)\hspace{1mm} a \le 1 \hspace{3mm}(ス)\\
+            0 < p \le 4 \hspace{3mm}より\\
+            a \ge 1 \hspace{3mm}(セ)
+        \end{eqnarray*}
+        \item[ソ-ト] 今回軸の位置は[サ,シ]より正の値のみをとる。このことから$f(x)$が最小となるのは[ス,セ]で挙げられた通り$x=4$または$x=p$の時のみ。これを場合分けして別々に考えればよい。
+
+        \begin{enumerate}
+            \item $f(x)$が$x=4$で最小、すなわち$(0<)a \le 1$の時
+            \begin{eqnarray*}
+                f(4) &=& a \times 4^2 -2 \times(a+3) \times 4 -3a +21\\
+                &=& 5a-3 =1\\
+                \therefore a &=& \frac{4}{5}\\
+                これは0<a\le 1を満たす
+            \end{eqnarray*}
+            これでまず1つ(ソ,タ)
+            \item $f(x)$が$x=p$で最小、すなわち$a\ge 1$の時
+            \begin{eqnarray*}
+                f(p) = -3a+ 21+\frac{(a+3)^2}{a} &=& 1\\
+                \Leftrightarrow -3a+ 20+\frac{(a+3)^2}{a} &=&0\\
+                \Leftrightarrow 4a^2 -14a+9 &=&0\\
+                二次方程式の解の公式より\\
+                a &=& \frac{7 \pm \sqrt{13}}{4}\\
+                a\ge 1なので、\\
+                a=\frac{7 + \sqrt{13}}{4}
+            \end{eqnarray*}
+            $f(p)$は[サ,シ]での平方完成の式の使った。これでもう１つ(チ-ツ)
+        \end{enumerate}
+    \end{description}
+
+
+%\end{document}

@@ -1,0 +1,108 @@
+%2018年センター試験本試験数学1Aの解説資料
+%\documentclass{jsarticle} \usepackage[dvipdfmx]{graphics} \usepackage{amsmath} \usepackage{amssymb} \usepackage{cases}
+
+
+%\begin{document}
+    \section{第2問}
+    \subsection{問題について}
+    [1]は余弦定理の運用、三角比の計算、そして2直線が平行であることの性質の理解を問う問題である。序盤は余弦定理から$\cos \angle {\rm ABC}$、$\sin \angle {\rm ABC}$はすんなり出るはずであるが、その次から雲行きが怪しくなる。${\rm AB}\cdot \sin \angle {\rm ABC}$の表す値の意味と平行な2直線の関係を正しく理解していれば何とかなる。台形のどこが平行なのかわかりさえすれば難しくない。決して当てずっぽうにならないように。
+
+    [2]はデータの分析に関する理解を問う問題。与えられた表を正しく読み取ることができれば難しくない。しかし、目の付け所を正しく理解していないと大きく時間を使ってしまうため不安があったのなら今一度復習をすることを勧める。これといった回答方針はなく、いかに要領よく解答できるかにかかっている。最後の計算問題は最初から全体を見ると分かりにくいので部分から攻める。
+
+    \subsection{解答例}
+    [1]について具体的な図は与えない。自ら作図するように。
+    \begin{description}
+        \item[ア,イ] $\bigtriangleup {\rm ABC}$に対し余弦定理を適応し
+        \begin{eqnarray*}
+            \cos \angle {\rm ABC} &=& \frac{{\rm AB}^2 + {\rm BC}^2 -{\rm AC}^2}{2\cdot {\rm AB}\cdot {\rm BC}}\\
+            &=& \frac{5^2+9^2-6^2}{2\cdot 5 \cdot 9}\\
+            &=& \frac{7}{9}
+        \end{eqnarray*}
+        \item[ウ-オ] $0<\angle {\rm ABC}<\pi$なので$\sin \angle {\rm ABC}>0$に注意する。
+        \begin{eqnarray*}
+            \sin^2 \theta +\cos^2 \theta &=& 1 \hspace{3mm}より\\
+            \sin \angle {\rm ABC} &=& \sqrt{1-\cos^2 \angle {\rm ABC}}\\
+            &=& \sqrt{\frac{32}{81}}\\
+            &=& \frac{4\sqrt{2}}{9}
+        \end{eqnarray*}
+        \item[カ] $\sqrt{ }$のある大小比較は2乗するのが基本ではあるがそれにこだわる必要はない。$\sqrt{2}\simeq 1.41$\footnote{$\sqrt{2}\simeq 1.41421356\cdots$「一夜一夜に人見ごろ」(ひとよひとよにひとみごろ)で覚えよう}で十分である。
+        \begin{eqnarray*}
+            {\rm AB}\cdot \sin \angle {\rm ABC} &=& 5\times \frac{4\sqrt{2}}{9}\\
+            &\simeq & \frac{20\times 1.41}{9}\\
+            &=& \frac{28.2}{9}
+        \end{eqnarray*}
+        これに対して、
+        \begin{eqnarray*}
+            {\rm CD} &=& 3\\
+            &=& \frac{27}{9}\\
+            \therefore {\rm CD} &<& {\rm AB}\cdot \sin \angle {\rm ABC}
+        \end{eqnarray*}
+        \item[キ] この問いは直前の[カ]を理由に台形ABCDの平行な辺の組を決定している。そのため、まずは唐突に表れた${\rm AB}\cdot \sin \angle {\rm ABC}$の値の意味を考える。これは、$\bigtriangleup {\rm ABC}$を描くと想像しやすく、底辺を線分BCとしたときの$\bigtriangleup {\rm ABC}$の高さとなっている。言い換えれば、${\rm AB}\cdot \sin \angle {\rm ABC}$は点Aと線分BCの距離($h$とする)となっている。このことから、[カ]の不等式は長さの大小関係を示しているとわかる。
+
+        次は平行な2直線の関係を長さというキーワードと共に考えると、「平行な2直線の一方から他方へ引いた垂線の長さは常に等しい」というものが思いつく。図~\ref{fig:2-1}の性質のことである。
+        \begin{figure}[htbp]
+            \begin{center}
+                \resizebox{!}{3cm}{
+                \includegraphics{2-1a.eps}
+                }
+            \end{center}
+            \caption{平行線の性質}
+            \label{fig:2-1}
+        \end{figure}
+
+        ここまで来たら${\rm AD}// {\rm BC}$を仮定\footnote{唐突かつ必然的ではない仮定ではあるが、[カ]の不等式を使うためには$h$を含む式、つまり点Aと線分BCの距離と点Dと線分BCの距離について考えるしかないのである。}する。すなわち点Aと線分BCの距離($h$)と点Dと線分BCの距離($h'$とする)が等しいことを仮定するのである。
+        \begin{eqnarray*}
+            h' &=& {\rm CD}\cdot \sin \angle{\rm DCB}\\
+            0 &<& \sin \angle{\rm DCB} \le 1 \hspace{3mm}なのだから\\
+            h' &\le &{\rm CD}\\
+            したがって,h&=&h'はh>{\rm CD}に矛盾
+        \end{eqnarray*}
+        これでABとCDが平行でない\footnote{ABとCDが平行}ことが分かった。
+        \item[ク,コ] ABとCDが平行なので、$\angle {\rm DCB}=\pi -\angle {\rm ABC}$であることと、$\bigtriangleup$DBCに余弦定理を適応することで
+        \begin{eqnarray*}
+            {\rm BD}^2 &=& {\rm BC}^2 +{\rm AC}^2 -2\cdot {\rm BC}\cdot {\rm AC} \cdot \cos(\pi -\angle {\rm ABC})\\
+            &=& 9^2 +3^2 -2\times 3 \times 9 \times \left( -\frac{7}{9} \right)\\
+            &=& 132\\
+            \therefore {\rm BD} &=& 2\sqrt{33}
+        \end{eqnarray*}
+        \item[サ,シ] 答えは1,6(順不同)である。
+        \\図~\ref{fig:2-2}において箱ひげ図\footnote{そもそも箱ひげ図とは最小値、第1四分位数、中央値、第3四分位数、最大値の5数要約を表すグラフのことである。}の読み方を示すことで解説とする。
+        \begin{figure}[htbp]
+            \begin{center}
+                \resizebox{!}{3cm}{
+                \includegraphics{2-2a.eps}
+                }
+            \end{center}
+            \caption{箱ひげ図}
+            \label{fig:2-2}
+        \end{figure}
+        \item[ス,セ] 答えは4,5(順不同)。\\
+        まず$Z$の示す意味を把握する。
+        \begin{eqnarray*}
+            Z &=& \frac{W}{X}\\
+            \Leftrightarrow W &=& Z\cdot X
+        \end{eqnarray*}
+        よって$X$を横軸に、$W$を縦軸にとると$Z$は傾きを示しているとわかる。正直、傾きというと語弊があるがこの問題を解く上では十分な理解である。この理解があれば、$l_1$から$l_4$が$Z$にとっての目盛であることがわかる。(a)が男子短距離、(b)が女子短距離、(c)が男子長距離、(d)が女子長距離である。\\
+        \item[ソ] $\sum_{ }^{ }$をうまく使う\footnote{添え字が変化すること以外同じ項を足し合わせるような場合はすぐさま$\sum_{ }^{ }$を使うことを考えよう}と容易に計算できる。
+        \begin{eqnarray*}
+            (与式) &=& \sum_{k=1}^{n} (x_k -\bar{x})(w_k - \bar{w})\\
+            &=& \sum_{k=1}^{n} \{ x_k w_k -\bar{x} w_k -x_k \bar{w} + \bar{x} \bar{w} \}\\
+            &=& \sum_{k=1}^{n} x_k w_k -\sum_{k=1}^{n} \bar{x} w_k -\sum_{k=1}^{n} x_k \bar{w} +\sum_{k=1}^{n} \bar{x} \bar{w}
+        \end{eqnarray*}
+        ここまでくれば$\sum_{ }^{ }$を1つずつ計算すればよい。この時、問題文中の注意書きの計算も使えば、
+        \begin{eqnarray*}
+            \sum_{k=1}^{n} x_k w_k &=& x_1w_1 + x_2w_2 +\cdots +x_{n-1} w_{n-1} +x_nw_n\\
+            \sum_{k=1}^{n} \bar{x} w_k &=& n\bar{x}\bar{w}\\
+            \sum_{k=1}^{n} x_k \bar{w} &=& n\bar{x}\bar{w}\\
+            \sum_{k=1}^{n} \bar{x} \bar{w} &=& n\bar{x}\bar{w}
+        \end{eqnarray*}
+        よって
+        \[
+        (与式)= x_1w_1 + x_2w_2 +\cdots +x_{n-1} w_{n-1} +x_nw_n -n\bar{x}\bar{w}
+        \]
+
+    \end{description}
+
+
+
+%\end{document}

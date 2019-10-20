@@ -1,0 +1,130 @@
+%2018年センター試験本試験数学1Aの解説資料
+%\documentclass{jsarticle} \usepackage[dvipdfmx]{graphics} \usepackage{amsmath} \usepackage{amssymb} \usepackage{cases}
+
+%\begin{document}
+    \section{第5問}
+    \subsection{問題要旨}
+    三角形や円と直線にかかわる諸定理の理解を問う問題。この問題で使用した定理をあらかじめ挙げておこう。
+    \begin{itemize}
+        \item 三平方の定理
+        \item 方べきの定理
+        \item メネラウスの定理
+    \end{itemize}
+    そのほかにも三角形の五心の性質など平面図形の理解を様々問われている。
+
+    序盤は定理の単純な運用で済むが中盤に点Fの存在する場所を決定に骨を折る。適当に二択で回答してしまっては後の問題の点数がつかなくなてしまうので必ず理由のある回答をしたい。
+
+    満点を取るには分数と比の関係についてよく理解しているとすんなり解答できるのではないかと思われる。
+    \subsection{解答例}
+    \begin{description}
+        \item[ア-ウ] 三平方の定理からBCの長さを決定し角の二等分線の性質を使う。\\
+        \begin{eqnarray*}
+            {\rm BC} &=& \sqrt{{\rm AB}^2 + {\rm AC}^2}\\
+            &=& \sqrt{5}
+        \end{eqnarray*}
+        また線分ADは$\angle$Aの二等分線なので
+        \begin{eqnarray*}
+            {\rm BD} : {\rm DC} &=& {\rm AB} : {\rm AC}\\
+            &=& 2:1\\
+            \therefore {\rm BD} &=& \frac{2}{3} {\rm BC}\\
+            &=& \frac{2 \sqrt{5}}{3}
+        \end{eqnarray*}
+        \item[エ-カ] 方べきの定理を線分BAと線分BD、そして円に対し適応する。
+        \begin{eqnarray*}
+            {\rm AB}\cdot {\rm BE} &=& {\rm BD}^2\\
+            &=& \frac{20}{9}
+        \end{eqnarray*}
+        \item[キ-ケ]
+        \begin{eqnarray*}
+            {\rm BE} &=& \frac{20}{9} \cdot \frac{1}{2}\\
+            &=& \frac{10}{9}
+        \end{eqnarray*}
+        \item[コ]
+        \begin{eqnarray*}
+            \frac{{\rm BE}}{{\rm BD}} &=& \frac{10}{9} \cdot \frac{3}{2\sqrt{5}}\\
+            &=& \frac{\sqrt{5}}{3}\\
+            \frac{{\rm AB}}{{\rm BC}} &=& 2 \cdot \frac{1}{\sqrt{5}}\\
+            &=& \frac{2\sqrt{5}}{5}\\
+            \therefore \frac{{\rm BE}}{{\rm BD}} &<& \frac{{\rm AB}}{{\rm BC}}
+        \end{eqnarray*}
+        \item[サ] 問題文から直前の分数の大小関係から点Fの位置、すなわち直線ACと直線DEの交点の位置を決定している。考え方としては$\angle$Bを共有する$\bigtriangleup$BACと$\bigtriangleup$BEDの辺の長さの関係から答えを出したい。そのために図\ref{fig:5-1}と図\ref{fig:5-2}を与える。
+
+        \begin{figure}[htbp]
+            \begin{center}
+                \begin{tabular}{c}
+                    \begin{minipage}{0.4\hsize}
+                        \begin{center}
+                            \resizebox{!}{5cm}{
+                            \includegraphics{5-1a.eps}
+                            }
+                            \caption{仮定の場合の図}
+                            \label{fig:5-1}
+                        \end{center}
+                    \end{minipage}
+                    \begin{minipage}{0.4\hsize}
+                        \begin{center}
+                            \resizebox{!}{5cm}{
+                            \includegraphics{5-2a.eps}
+                            }
+                            \caption{実際の場合の図}
+                            \label{fig:5-2}
+                        \end{center}
+                    \end{minipage}
+                \end{tabular}
+            \end{center}
+        \end{figure}
+        図\ref{fig:5-1}は
+        \[
+        \frac{{\rm BE}}{{\rm BD}} = \frac{{\rm AB}}{{\rm BC}}
+        \]
+        を仮定したときのものである。これは上の式の同値変形から
+        \[
+        {\rm BC}:{\rm BD} ={\rm BA}:{\rm BE}
+        \]
+        を導き出せるから\footnote{これでも不十分なら中学数学を復習するように}である。そしてこの場合をこの問題を解く上での基準に定める。では直前の問いで導かれた
+        \[
+        \frac{{\rm BE}}{{\rm BD}} < \frac{{\rm AB}}{{\rm BC}}
+        \]
+        に注目する。比の値\footnote{$a:b$の比の値は$\frac{a}{b}$である。}から攻めよう。
+        \begin{eqnarray*}
+            k &<& l \hspace{3mm} とおくと\\
+            \frac{{\rm BE}}{{\rm BD}} &=& k\\
+            \frac{{\rm AB}}{{\rm BC}} &=& l
+        \end{eqnarray*}
+        とする。そうすると三角形の二辺の比がわかる。
+        \begin{eqnarray*}
+            {\rm BE} : {\rm BD} &=& k :1\\
+            {\rm AB} : {\rm BC} &=& l:1
+        \end{eqnarray*}
+        ここまでくれば図\ref{fig:5-2}が自力で書けるだろう。先ほど基準にした図\ref{fig:5-1}は$k=l$のときを表している。考えるべきは$k<l$であるため、基準の図に比べABとBEの長さの比率をBEが短いように書き直せばいい。よって図\ref{fig:5-2}から点Fは辺ACをC側に延長したところにある。
+        \item[シ,ス] $\bigtriangleup$ABCと直線EFにメネラウスの定理を適応して
+        \[
+            \frac{{\rm CF}}{{\rm AF}}\cdot \frac{{\rm AE}}{{\rm EB}}\cdot \frac{{\rm BD}}{{\rm DC}} = 1
+        \]
+        ここでまだ出てきていない線分の長さを明らかにしておくと
+        \begin{eqnarray*}
+            {\rm AE} &=& {\rm AB}-{\rm BE}\\
+            &=&\frac{8}{9}\\
+            {\rm DC} &=& \frac{1}{3}\cdot {\rm BC}\\
+            &=& \frac{\sqrt{5}}{3}
+        \end{eqnarray*}
+        よって
+        \begin{eqnarray*}
+            \frac{{\rm CF}}{{\rm AF}} &=& \frac{{\rm EB}}{{\rm AE}} \cdot \frac{{\rm DC}}{{\rm BD}}\\
+            &=& \frac{5}{8}
+        \end{eqnarray*}
+        \item[セ,ソ]
+        \begin{eqnarray*}
+            {\rm CF} &=& \frac{5}{8} \cdot {\rm AF}\\
+            &=& \frac{5}{8} ({\rm CF} +1)\\
+            \Leftrightarrow {\rm CF} &=& \frac{5}{3}
+        \end{eqnarray*}
+        \item[タ] あらかじめ点Dが$\angle$Aの二等分線上にあることから内心であるのではないかと疑うのが自然な流れ。ここで問題文の最後の式より
+        \begin{eqnarray*}
+            \frac{{\rm CF}}{{\rm AC}} &=& \frac{{\rm CB}}{{\rm AB}}\\
+            \Leftrightarrow {\rm AB}:{\rm BF}&=& {\rm AC}:{\rm CF}
+        \end{eqnarray*}
+        したがって、線分BCは$\angle$ABFの二等分線。点Dは角の二等分線の交点なので内心。
+    \end{description}
+
+%\end{document}
