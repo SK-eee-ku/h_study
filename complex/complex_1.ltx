@@ -1,0 +1,147 @@
+\documentclass[dvipdfmx]{jsreport}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+
+
+
+\begin{document}
+	\chapter{複素数の導入}
+	\section{複素数の定義}
+	\subsection{虚数とは}
+	虚数単位 \(i\)は次を満たす数である．
+	\begin{equation}
+		i^2 =-1
+	\end{equation}
+	単に虚数と呼ぶこともあり，複素数の基本となる量である．
+
+	今までは数を2乗すると正の数または0となると教わってきた．しかし，これは正しくない．正しくは {\bf 実数}を2乗すると正の数または0となる．
+	ここで意識したいのが実数という数の枠組みだ．これまでに扱ってきた有理数や無理数といった数の枠組みはすべて実数に含まれる(図\ref{tikz_real_number})．
+	虚数というのは実数という枠の外の数の1つだ．
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}\large
+			\draw[thick](0, 0)circle[x radius=4, y radius=3];
+			\node[above] at (0, 3){実数};
+			\draw[thick](-2, 0)circle[x radius=1.5, y radius=1]node{整数};
+			\draw[thick](2, 0)circle[x radius=1.5, y radius=1]node{小数};
+			\draw[thick](1, -2)circle[x radius=1, y radius=0.7];
+			\draw[thick](-1, 2)circle[x radius=1, y radius=0.7];
+		\end{tikzpicture}
+		\caption{実数}
+		\label{tikz_real_number}
+	\end{figure}
+
+	\subsection{複素数とは}
+	複素数は次で表現される数 $z$のすべてをいう．
+	\begin{equation}
+		z=x+iy\qquad x, y\text{は任意の実数}
+	\end{equation}
+
+	これは簡単に虚数が入っている数というわけではない． $y=0$の場合を考えればわかる通り，
+	実数を含んでいる(図\ref{tikz_real_complex})．実数とは複素数の特別な形だということができる．
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}\large
+			\draw[thick](0, 0)circle[x radius=4, y radius=3];
+			\node[above] at (0, 3){複素数};
+			\draw[thick](-1, 0)circle[x radius=2.5, y radius=2]node{実数};
+		\end{tikzpicture}
+		\caption{実数と複素数の関係}
+		\label{tikz_real_complex}
+	\end{figure}
+
+	\section{複素数の表現}
+	複素数の表現方法はいくつか存在する．
+
+	\subsection{実部・虚部}
+	定義で扱ったのが次の表現である．
+	\[z=x+yi\]
+	これは複素数の実部と虚部を明確にするための表現である．
+	$x$が実部， $y$が虚部である．複素数の基本的な計算はこの表現によっておこなう．
+	計算のときは虚数単位 $i$は文字として計算してよい．そのため，複素数の計算は実部と虚部の計算と言っていい．
+
+	\subsection{極形式}
+	\[z=r(\cos\theta +i \sin\theta)\]
+	上の式は極形式というものだ．複素数の大きさと偏角
+	\footnote{複素数の大きさと偏角はあとで扱う内容である．ひとまず読み進めてほしい．}
+	を明確にするための表現である．
+	$r$が大きさを， $\theta$が偏角を表している．これらは複素数の掛け算や割り算のときに効果的な表現である．
+
+	\subsection{表示の変換}
+	2つの形式の変換は素早くできるようになりたい．
+	\begin{align*}
+		z&= x+iy\\
+		 &= r(\cos\theta+i\sin\theta)
+	\end{align*}
+	このように表現できた場合は
+	\[x=r\cos\theta, \quad y=r\sin\theta\]
+	と変換される．これは直交座標を極座標に変換するときの式に他ならない．
+	この理解は後の複素数平面を扱う部分で述べる．
+
+
+	\section{複素数平面}
+	複素数の2つの表現方法では実部と虚部，または大きさと偏角といったように2つの要素によって1つの複素数を表現してる．
+	これはまさしく，平面上での点の表現であるといえるだろう．
+	このことから，複素数を平面上の点として表現する手法がある．そこで使う平面を複素数平面と呼ぶのだ．
+
+	\subsection{複素平面の導入}
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[]\large
+			\draw[step=1, thin, gray](-2, -2) grid (4, 4);
+			\node[below left]{O};
+			\draw[semithick, ->](-2, 0)--(4, 0)node[right]{Re};
+			\draw[semithick, ->](0, -2)--(0, 4)node[above]{Im};
+			\fill[red](3, 2)node[above left]{\(3+2i\)} circle (2pt);
+		\end{tikzpicture}
+		\caption{複素平面の導入}
+		\label{tikz_complex_plane01}
+	\end{figure}
+
+	図\ref{tikz_complex_plane01}で複素数平面の使い方を理解する．
+	横方向の軸は実軸，縦方向の軸は虚軸という．それらの値が実部，虚部を意味している．
+	これによって平面上の点が複素数を表すことができるようになっている．
+
+	実軸上全体の点は実数を示している．横方向のみであった数直線を縦方向に拡張したものが複素数平面であると考えることもできる．
+	このように考えると3つ目の軸を足して新たな数が作れるのかという話になるかもしれないが，多くの人が考える必要がないことだと思われる
+	\footnote{工学部で2年間数学を学んでも出てくることはなかった．数体の拡張は理学関係なのかもしれないが，門外漢なのでわからない．
+	興味があればガロア体など調べるのも良いだろう．}．
+
+
+	\subsection{極座標}
+	複素数の表現には極形式というものがあった．
+	極座標というものに親しみがない場合は各自で調べてほしい．
+	図\ref{tikz_complex_plane02}は極座標表示から複素平面に図示したものだ．
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}\large
+			\draw[semithick, ->](0, 0)node[left]{O}--(4.5, 0);
+			\foreach \x in {1, 2, 3, 4}{
+				\draw[thin, gray](0, 0) circle (\x cm);
+			}
+			\fill[red] (60:3)node[above right](60:3){\(3(\cos \frac{\pi}{3}+j\sin \frac{\pi}{3})\)} circle (2pt);
+			\draw[red, dashed](0, 0)--(60:3);
+			\draw[semithick](0.7, 0) arc[radius=0.7, start angle=0, end angle=60]node[red, right=2mm]{\(\frac{\pi}{3}\)};
+		\end{tikzpicture}
+		\caption{極形式による複素平面}
+		\label{tikz_complex_plane02}
+	\end{figure}
+
+	実軸の正方向が極座標の偏角をはかる基準になっている．そして原点からの距離が複素数の大きさである．
+	複素数の極形式での説明では説明はしなかった大きさと偏角の説明は図\ref{tikz_complex_plane02}で済ませることにする．
+
+
+
+
+\end{document}

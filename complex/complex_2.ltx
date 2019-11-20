@@ -1,0 +1,49 @@
+\documentclass[dvipdfmx]{jsreport}
+\usepackage{graphicx}
+\usepackage{ascmac}
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+\begin{document}
+	\chapter{複素数の計算}
+	\section{表示形式による計算の違い}
+	表示形式は複素数の捉え方を表すことはすでに述べている．これによって計算の考え方も大きく変わる．
+	この使い分けこそが複素数の醍醐味ではないのかと私は考える．
+
+	\subsection{実部と虚部による計算}
+	$z=x+iy$という形式の場合，計算はすべて文字式の計算と同じものであると考えたらいい．
+	具体的に和と積の計算を以下に示す．
+	\begin{align*}
+		(a+ib)+(c+id)&= (a+c)+i(b+d)\\
+		(a+ib)\cdot(c+id)&= (ac-bd)+i(ad+bc)
+	\end{align*}
+
+	虚数単位 $i$を単純に文字とみなして計算すればいい．ただ，2乗したときに-1となることを忘れてはならない．
+	割り算に関してはこの形式であるとなかなか計算が進まない．もっと言えば積でも係数はなかなか重たいものになっている．
+
+	実部と虚部を分けて計算する手法は複素数を相手にするときの最もまっとうな方法であるといえる．
+	まずはこの方法を第一に考えるとよいだろう．
+
+	\subsection{極形式の計算}
+	極形式は積と商のみで使うことを勧める．
+	\begin{align*}
+		z_1&=r_1(\cos\theta_1+i\sin\theta_1)\\
+		z_2&=r_2(\cos\theta_2+i\sin\theta_2)\\
+		z_1 \cdot z_2&= r_1r_2\{
+			\cos(\theta_1+\theta_2)+i\sin(\theta_1+\theta_2)
+		\}\\
+		z_1 / z_2&= r_1/r_2\{
+			\cos(\theta_1-\theta_2)+i\sin(\theta_1-\theta_2)
+		\}
+	\end{align*}
+
+	複素数の大きさに注目すると積と商はそのまま反映されている．
+	偏角に注目すると積ならば足し算，商ならば引き算になっている．まるで指数の計算かのようである．
+
+
+\end{document}
