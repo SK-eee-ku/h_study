@@ -16,7 +16,7 @@
 	\chapter{複素数の導入}
 	\section{複素数の定義}
 	\subsection{虚数とは}
-	虚数単位 \(i\)は次を満たす数である．
+	虚数単位 \(i\)\footnote{以降，本参考資料では断りなく $i$を虚数単位とする．}は次を満たす数である．
 	\begin{equation}
 		i^2 =-1
 	\end{equation}
@@ -140,6 +140,120 @@
 
 	実軸の正方向が極座標の偏角をはかる基準になっている．そして原点からの距離が複素数の大きさである．
 	複素数の極形式での説明では説明はしなかった大きさと偏角の説明は図\ref{tikz_complex_plane02}で済ませることにする．
+
+	\subsection{複素数の大きさ}
+	複素数の大きさは極形式での $r$の値のことを言っている．
+	これは複素平面上では原点からの距離である．ちょうど，数直線上で絶対値は原点からの距離と考えていることと同じだ．
+	\[r=\sqrt{x^2+y^2}\]
+
+	\section{本章で扱う問題}
+	本章で扱った内容から解くことができる問題を以下に示す．
+	\begin{itemize}
+		\item 虚数の定義
+		\item 虚数の計算
+		\item 虚数の形式の変換
+		\item 複素数平面による図示
+	\end{itemize}
+
+	これらに関する問題とその解法を示しておく．
+	\subsection{虚数の定義}
+	\begin{itembox}[l]{問題}
+		以下を計算せよ．
+		\begin{enumerate}
+			\item $\sqrt{-1}$
+			\item $\sqrt{-5}$
+			\item $\sqrt{i}$\hspace{1cm}(難)
+		\end{enumerate}
+	\end{itembox}
+
+	1問目は虚数単位の定義である．
+	\[\sqrt{-1}=i\]
+
+	2問目は2つの平方根の積に分けることで容易に理解できる．
+	\[\sqrt{-5}=\sqrt{5}\cdot\sqrt{-1}=\sqrt{5}i\]
+
+	最後の問題は難しい．次章の内容によって答えることができる問題である．したがって同じ問題はあとでも出題する．
+	答えだけ示す．
+	\[\frac{\sqrt{2}}{2}(1+i)\]
+	この値を2乗するとちょうど $i$になることが確認できる．
+
+	\subsection{虚数の計算}
+	\begin{itembox}[l]{問題}
+		以下を計算せよ．
+		\begin{enumerate}
+			\item $(1+i)+(3+5i)$
+			\item $(2+3i)\times(5+2i)$
+			\item $(1+2i)^2$
+		\end{enumerate}
+	\end{itembox}
+	大した説明はないので，計算を以下に示す．
+	\begin{align*}
+		(1+i)+(3+5i)&= 4+6i\\
+		(2+3i)\times(5+2i)&= 4+19i\\
+		(1+2i)^2 &= -3+4i
+	\end{align*}
+
+	文字計算を基本としながら， $i^2=-1$を使うことで容易に計算できる．
+
+
+	\subsection{形式の変換}
+	複素数の2つの形式を自由に変換できることが大事だ．特に $x+iy$という形から極形式に変換することができる必要がある．
+	逆は単に三角比の計算なので説明する必要はないと思われる．
+
+	\begin{itembox}[l]{問題}
+		以下の複素数を極形式に書き直せ．
+		\begin{enumerate}
+			\item $1+i$
+			\item $1-\sqrt{3}i$
+			\item $1+2i$\hspace{1cm}(ヒント：有名角でない場合は，適当な文字を与えてから後で説明すれば良い．)
+		\end{enumerate}
+	\end{itembox}
+
+	計算の方針としては，最初に複素数の大きさを求める．これで複素数をくくると極形式一歩手前の状態になる．
+	あとは実部と虚部を $\cos, \sin$に照らして偏角を決定する．
+
+	\begin{align*}
+		1+i &= \sqrt{2} \left( \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2} i \right)\\
+			&= \sqrt{2} (\cos \frac{\pi}{4} +i \sin \frac{\pi}{4})\\
+		1-\sqrt{3}i&= 2 \left( \frac{1}{2}-\frac{\sqrt{3}}{2}i \right)\\
+				   &= 2(\cos \frac{5\pi}{3} + i \sin\frac{5\pi}{3})\\
+		1+2i&=\sqrt{5}\left( \frac{1}{\sqrt{5}}+\frac{2}{\sqrt{5}}i \right)\\
+			&= \sqrt{5}(\cos\alpha + i\sin{\alpha})\qquad \left( \cos\alpha = \frac{1}{\sqrt{5}}, \ 
+			\sin\alpha = \frac{2}{\sqrt{5}}\right)
+	\end{align*}
+
+	偏角が有名角でない場合は文字を与えた上で説明すればいいというのは， $\cos, \sin$の値を明らかにすれば
+	いいということである．
+
+	\subsection{複素平面による図示}
+	\begin{itembox}[l]{問題}
+		本章の問題文に現れたすべての複素数を複素平面上に図示せよ．
+		解答は含まれない．
+	\end{itembox}
+	解答は図\ref{tikz_complex_plane01}である．
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[scale=1.5]\large
+			\draw[step =1cm, gray, thin](-2, -2)grid(6, 6);
+			\draw[semithick, ->](-2, 0)--(6, 0)node[right]{Re};
+			\draw[semithick, ->](0, -2)--(0, 6)node[above]{Im};
+			\draw(0, 0)node[below left]{O};
+
+			\fill[red](0, 1)node[above right]{$i$} circle (2pt);
+			\fill[red](0, 2.27)node[above right]{$\sqrt{-5}$} circle (2pt);
+			\fill[red](45:1)node[below right]{$\sqrt{i}$} circle (2pt);
+			\fill[red](1, 1)node[above right]{$1+i$} circle (2pt);
+			\fill[red](3, 5)node[above right]{$3+5i$} circle (2pt);
+			\fill[red](2, 3)node[above right]{$2+3i$} circle (2pt);
+			\fill[red](5, 2)node[above right]{$5+2i$} circle (2pt);
+			\fill[red](1, 2)node[above right]{$1+2i$} circle (2pt);
+			\fill[red](1, -1.73)node[above right]{$1+\sqrt{3}i$} circle (2pt);
+		\end{tikzpicture}
+		\caption{解答}
+		\label{tikz_chap1_ans01}
+	\end{figure}
+
 
 
 
