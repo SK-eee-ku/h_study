@@ -62,8 +62,41 @@
 	これは極形式によって受ける最大の恩恵である．複素数の計算で指数が現れたら必ずドモアブルの定理を適応することを
 	考えよう．
 
-	\section{複素数の性質}
-	かなり遅いタイミングであるが，ここで複素数の性質について扱う．
+	\section{複素数について}
+	かなり遅いタイミングであるが，ここで複素数の性質や扱い方について述べる．
+	\subsection{大きさ}
+	複素数の世界では，数の大小関係は存在しない．実数の世界では数直線の右側が大きな数だという理解ができたが，
+	複素数平面ではそのようにはいかない．しかし，大きさというものを全く考えないわけにはいかないので，次で複素数の大きさを定義する．
+	\begin{equation}
+		z=x+iy \ \Rightarrow \ |z|= \sqrt{x^2+y^2}
+	\end{equation}
+	これは複素数平面上での原点からの距離である．しかし，複素数の大きさは与えたが，複素数に大小関係は存在しない．
+
+	\subsection{偏角}
+	複素平面上に図示した複素数 $z$と原点とを結ぶ線分と実軸の正方向とのなす角を偏角という．
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[]\large
+			\node[below left]{O};
+			\draw[semithick, ->](-1, 0)--(3, 0)node[right]{Re};
+			\draw[semithick, ->](0, -1)--(0, 3)node[above]{Im};
+			\fill[red](40:3) circle (2pt);
+			\draw[dashed](0, 0)--(40:3);
+			\draw[red, ->](2, 0) arc[radius=2 , start angle =0 , end angle =40 ]node[right=5mm, below=2mm]{$\theta$};
+		\end{tikzpicture}
+		\caption{偏角}
+		\label{tikz_complex_phase}
+	\end{figure}
+
+	複素平面においては角度に向きが存在する．反時計回りが正で時計回りが負である．これは何度も繰り返し述べてゆくが，角度に方向が
+	あるという理解が複素数の学習には必要だ．
+
+	\subsection{共役な複素数}
+	共役という言葉は高校数学でも何度か出てきたように思う．今までのものと似たようなものである．
+
+
+
+
 
 
 
