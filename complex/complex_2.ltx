@@ -103,7 +103,7 @@
 	共役な複素数の組の和と積はともに実数になる．
 	\begin{align*}
 		z+\bar{z} &=2z\\
-		z\cdot \bar{z} = x^2 +y^2
+		z\cdot \bar{z} &= x^2 +y^2
 	\end{align*}
 
 	極形式で共役な複素数を見てみる．
@@ -112,7 +112,29 @@
 		\bar{z} &= r(\cos\theta -i\sin\theta)\\
 				&= r(\cos(-\theta)+i\sin(-\theta))
 	\end{align*}
-	このように，偏角が-1倍されている．これを複素数平面で図示すると図のようになる．
+	このように，偏角が-1倍されている．これを複素数平面で図示すると図\ref{tikz_complex_pair}のようになる．
+
+
+
+	\begin{figure}[htbp]
+		\centering
+		\begin{tikzpicture}[]\large
+			\draw[semithick, ->](-1, 0)--(3, 0)node[right]{Re};
+			\draw[semithick, ->](0, -3)--(0, 3)node[above]{Im};
+			\draw[thick, red, dashed](0, 0)node[below left, black]{O}--(35:3);
+			\draw[thick, blue, dashed](0, 0)--(-35:3);
+			\fill[red](35:3)node[above right]{$z$} circle (2pt);
+			\fill[blue](-35:3)node[below right]{$-z$} circle (2pt);
+		\end{tikzpicture}
+		\caption{共役複素数}
+		\label{tikz_complex_pair}
+	\end{figure}
+
+	共役複素数は複素平面上における実軸対称な点ということができる．
+
+	\subsection{純虚数}
+	実部が0である複素数を純虚数という．これは虚数単位 $i$の実数倍である\footnote{0は実数ということにする．}．
+	これに関しては語句の説明に過ぎず，たいして説明することはない．
 
 
 
@@ -121,5 +143,21 @@
 
 
 
+
+
+
+
+
+
+
+
+
+	% \section{本章で扱う問題}
+	% 本章の内容で扱う問題は以下のものが考えられる．
+	% \begin{itemize}
+	%     \item 極形式を利用した複素数の剰余算
+	%     \item ドモアブルの定理の利用
+	%     \item 共役複素数の利用
+	% \end{itemize}
 
 \end{document}
