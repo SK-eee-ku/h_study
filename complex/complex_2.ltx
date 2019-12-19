@@ -24,7 +24,7 @@
 		(a+ib)\cdot(c+id)&= (ac-bd)+i(ad+bc)
 	\end{align*}
 
-	虚数単位 $i$を単純に文字とみなして計算すればいい．ただ，2乗したときに-1となることを忘れてはならない．
+	虚数単位 $i$を単純に文字とみなして計算すればいい．ただ，2乗したときに $-1$となることを忘れてはならない．
 	割り算に関してはこの形式であるとなかなか計算が進まない．もっと言えば積でも係数はなかなか重たいものになっている．
 
 	実部と虚部を分けて計算する手法は複素数を相手にするときの最もまっとうな方法であるといえる．
@@ -48,9 +48,9 @@
 	偏角に注目すると積ならば足し算，商ならば引き算になっている．まるで指数の計算かのようである．
 	これを利用することで複素数の計算は飛躍的に容易になる．
 
-	証明が必要であるだろうが，これは問題として出題する
-	\footnote{素直に掛け算を実行して，三角関数の加法定理を適応すると容易に証明できる．}
-	．
+	% 証明が必要であるだろうが，これは問題として出題する
+	% \footnote{素直に掛け算を実行して，三角関数の加法定理を適応すると容易に証明できる．}
+	% ．
 
 	\subsection{ドモアブルの定理}
 	極形式の積の計算を累乗に繰り返し使用することで次の公式を得ることができる．
@@ -99,11 +99,11 @@
 		\bar{z} = x -iy
 	\end{equation}
 
-	共役な複素数とは虚部を-1倍したものである．
-	共役な複素数の組の和と積はともに実数になる．
+	共役な複素数とは虚部を $-1$倍したものである．
+	共役な複素数の組の和と積はともに実数になる．また，積は複素数の大きさの2乗となっていることに注意しよう．
 	\begin{align*}
 		z+\bar{z} &=2z\\
-		z\cdot \bar{z} &= x^2 +y^2
+		z\cdot \bar{z} &= x^2 +y^2=|z|^2
 	\end{align*}
 
 	極形式で共役な複素数を見てみる．
@@ -112,7 +112,8 @@
 		\bar{z} &= r(\cos\theta -i\sin\theta)\\
 				&= r(\cos(-\theta)+i\sin(-\theta))
 	\end{align*}
-	このように，偏角が-1倍されている．これを複素数平面で図示すると図\ref{tikz_complex_pair}のようになる．
+	このように，偏角が $-1$倍されている．これを複素数平面で図示すると図\ref{tikz_complex_pair}のようになる．
+	加えて，共役複素数は複素平面上における実軸対称な点ということができる．
 
 
 
@@ -125,39 +126,57 @@
 			\draw[thick, blue, dashed](0, 0)--(-35:3);
 			\fill[red](35:3)node[above right]{$z$} circle (2pt);
 			\fill[blue](-35:3)node[below right]{$-z$} circle (2pt);
+			\draw[semithick, red](1, 0) arc[radius=1, start angle =0, end angle=35];
+			\draw[semithick, red](1.1, 0) arc[radius=1.1, start angle =0, end angle=35];
+			\draw[semithick, blue](1, 0) arc[radius=1, start angle =0, end angle=-35];
+			\draw[semithick, blue](1.1, 0) arc[radius=1.1, start angle =0, end angle=-35];
 		\end{tikzpicture}
 		\caption{共役複素数}
 		\label{tikz_complex_pair}
 	\end{figure}
 
-	共役複素数は複素平面上における実軸対称な点ということができる．
 
 	\subsection{純虚数}
 	実部が0である複素数を純虚数という．これは虚数単位 $i$の実数倍である\footnote{0は実数ということにする．}．
-	これに関しては語句の説明に過ぎず，たいして説明することはない．
+	これ以上のことはないのだが，問題を解く上で純虚数という言葉を見たら，実部が0になるという条件が
+	与えられていると解釈する必要がある．したがって，語句として覚えておこう．
 
 
+	\section{本章で扱う問題}
+	本章の内容で扱う問題は以下のものが考えられる．
+	\begin{itemize}
+		\item 極形式を利用した複素数の剰余算
+		\item ドモアブルの定理の利用
+		\item 共役複素数の利用
+	\end{itemize}
+	\subsection{極形式を利用した複素数の計算}
+	\begin{itembox}[l]{問題}
+		以下を計算せよ．解答の表記は問わない．
+		\begin{enumerate}
+			\item $(7+7\sqrt{3}i)\times(9+9i)$
+			\item $(3-3\sqrt{3}i)\div(7\sqrt{3}+7i)$
+		\end{enumerate}
+	\end{itembox}
+	1つ目はそのまま計算することも可能な範囲ではあるが2つ目は確実に面倒になる問題だ．
+	まず1つ目を極形式を利用して計算すると次のようになる．
+	\begin{align*}
+		(7+7\sqrt{3}i)\times(9+9i)&= 14\left(\frac{1}{2} + \frac{\sqrt{3}}{2}i \right)
+								  \times 9\sqrt{2} \left( \frac{\sqrt{2}}{2} + \frac{\sqrt{2}}{2}i \right)\\
+								  &= 14 \left( \cos \frac{\pi}{3} + i\sin \frac{\pi}{3}  \right)
+								  \times 9\sqrt{2} \left( \cos \frac{\pi}{4} +i \sin \frac{\pi}{4}\right)\\
+								  &=126\sqrt{2} \left( \cos \frac{7\pi}{12} + i\sin \frac{7\pi}{12} \right)
+	\end{align*}
+	もちろん，普通に計算しても構わない．
+	\[(7+7\sqrt{3}i)\times(9+9i)= 63\{(1-\sqrt{3})+(1+\sqrt{3})i\}\]
+	
+	2つ目は次のようになる．
+	\begin{align*}
+		(3-3\sqrt{3}i)\div(7\sqrt{3}+7i)&= 6\left( \cos\frac{5\pi}{3} +i \sin\frac{5\pi}{3}\right)\div
+										14\left( \cos\frac{\pi}{6} +i \sin\frac{\pi}{6}\right)\\
+										&= \frac{3}{7} \left( \cos\frac{3\pi}{2} +i \sin\frac{3\pi}{2}\right)\\
+										&= - \frac{3}{7}
+	\end{align*}
+	意外な結果を得ることができた．極形式を使わない場合は分母と分子の両方に分母の共役複素数かければいい．
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	% \section{本章で扱う問題}
-	% 本章の内容で扱う問題は以下のものが考えられる．
-	% \begin{itemize}
-	%     \item 極形式を利用した複素数の剰余算
-	%     \item ドモアブルの定理の利用
-	%     \item 共役複素数の利用
-	% \end{itemize}
 
 \end{document}
