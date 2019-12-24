@@ -1,6 +1,6 @@
 % \documentclass[dvipdfmx,b5paper]{skreport}
-\documentclass[dvipdfmx]{skreport}
-\usepackage{graphics}
+\documentclass[dvipdfmx]{jsreport}
+\usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -50,8 +50,8 @@
     \newpage
     \chapter{ベクトル入門}
     この章ではベクトルの算術的な計算に的を絞り，ベクトルの定義やベクトルの表現，計算について扱う．この章での問題意識はベクトルを今まで通りの文字式計算に直せないのかということだ．
-    \input{vector-1.tex}
-    \input{vector-2.tex}
+    \input{./vector-1.ltx}
+    \input{./vector-2.ltx}
 
 
 \newpage
@@ -59,20 +59,20 @@
     \chapter{ベクトルと図形}
     前章ではベクトルの算術的な計算に注目しベクトルの計算法とスカラ量との結びつけを学習した．
     本章ではベクトルをそのまま扱い平面図形・空間図形などの問題を通してベクトルの有用性を体感したい．
-    \input{vector-3.tex}
-    \input{vector-4.tex}
+    \input{./vector-3.ltx}
+    \input{./vector-4.ltx}
 
     \chapter{ベクトル方程式}
     ベクトルと変数(スカラ量)を用いて図形を表現することをベクトル方程式という．発展的な内容であり，問題の解法の1つとして使えるものだ．しかし，優先度は高くなく，ベクトル方程式を利用できる問題は他の解法でも解ける．
 \newpage
 
-    \input{vector-5.tex}
+    \input{./vector-5.ltx}
 
     \vspace{5mm}
     以上．
 
-    \newpage
-    \input{end_text.tex}
+    % \newpage
+    % \input{end_text.tex}
 
 
 \end{document}
