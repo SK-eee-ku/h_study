@@ -52,14 +52,14 @@
 	% \footnote{素直に掛け算を実行して，三角関数の加法定理を適応すると容易に証明できる．}
 	% ．
 
-	\subsection{ドモアブルの定理}
+	\subsection{ド・モアブルの定理}
 	極形式の積の計算を累乗に繰り返し使用することで次の公式を得ることができる．
 	\begin{equation}
 		\{r(\cos\theta +i i\sin\theta)\}^n = r^n (\cos n\theta+i\sin n\theta)
 		\label{eq_theory_moivre}
 	\end{equation}
 
-	これは極形式によって受ける最大の恩恵である．複素数の計算で指数が現れたら必ずドモアブルの定理を適応することを
+	これは極形式によって受ける最大の恩恵である．複素数の計算で指数が現れたら必ずド・モアブルの定理を適応することを
 	考えよう．
 
 	\section{複素数について}
@@ -146,7 +146,7 @@
 	本章の内容で扱う問題は以下のものが考えられる．
 	\begin{itemize}
 		\item 極形式を利用した複素数の剰余算
-		\item ドモアブルの定理の利用
+		\item ド・モアブルの定理の利用
 		\item 共役複素数の利用
 	\end{itemize}
 	\subsection{極形式を利用した複素数の計算}
@@ -178,5 +178,43 @@
 	\end{align*}
 	意外な結果を得ることができた．極形式を使わない場合は分母と分子の両方に分母の共役複素数かければいい．
 
+	\subsection{ド・モアブルの定理の利用}
+	\begin{itembox}[l]{問題}
+		以下の計算を通して三角関数に関係する計算公式を導出せよ．
+		\begin{enumerate}
+			\item $(\cos\alpha +i\sin\alpha)^2$
+			\item $(\cos\alpha +i\sin\alpha)^3$
+			\item $(\cos\alpha +i\sin\alpha)\cdot (\cos\beta +i\sin\beta)$
+		\end{enumerate}
+	\end{itembox}
+
+	1つ目の式を文字式として計算するパターンと，ド・モアブルの定理を用いて計算するパターンの2つで変形する．
+	\begin{align*}
+		(\cos\alpha +i\sin\alpha)^2 &= (\cos^2\alpha -\sin^2\alpha) + 2i\cos\alpha\sin\alpha\\
+									&= \cos2\alpha +i\sin2\alpha\\
+		\therefore \cos2\alpha &= \cos^2\alpha -\sin^2\alpha\\
+		\sin2\alpha &= 2\cos\alpha\sin\alpha
+	\end{align*}
+	これは倍角公式である．
+
+	2つ目は
+	\[(a+b)^3=a^3 +3a^2b +3ab^2 +b^3\]
+	を利用して計算を進める．
+	\begin{align*}
+		\cos3\alpha +i\sin3\alpha&= \cos^3\alpha + 3i\cos^2\alpha\sin\alpha -3\cos\alpha\sin^2\alpha -i\sin^3\alpha\\
+								&= (\cos^3\alpha -3\cos\alpha\sin^2\alpha) +i(3\cos^2\alpha\sin\alpha-\sin^3\alpha)\\
+								&= (4\cos^3\alpha -3\cos\alpha) + i(-4\sin^3\alpha +3\sin\alpha)
+	\end{align*}
+	これは三倍角の公式である．
+
+	最後は結果のみ示すと，
+	\[\cos(\alpha +\beta)+i\sin(\alpha +\beta)
+	= (\cos\alpha\cos\beta -\sin\alpha\sin\beta) +i (\sin\alpha\cos\beta +\cos\alpha\sin\beta)\]
+	が得られる．これは加法定理である．
+
+	このように，ド・モアブルの定理から三角関数の公式を導出することができる．
+
+	% \subsection{共役複素数の利用}
+	
 
 \end{document}
